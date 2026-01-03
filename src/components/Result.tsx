@@ -5,7 +5,9 @@ interface ResultProps {
 }
 
 export function Result({ score, totalQuestions, onRetry }: ResultProps) {
-  const percentage = Math.round((score / totalQuestions) * 100);
+  const percentage = totalQuestions === 0
+    ? 0
+    : Math.round((score / totalQuestions) * 100);
   
   const getMessage = () => {
     if (percentage === 100) return { title: 'PERFECT!', sub: 'カメラマスター！' };
