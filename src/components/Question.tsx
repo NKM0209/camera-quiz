@@ -22,7 +22,7 @@ export function Question({
   const isCorrect = selectedAnswer === question.answer;
   
   const getDifficultyLabel = (d: number) => {
-    return '★'.repeat(d) + '☆'.repeat(3 - d);
+    return '★'.repeat(d) + '☆'.repeat(Math.max(0, 4 - d));
   };
 
   return (
