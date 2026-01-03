@@ -44,28 +44,28 @@ export function StartScreen({ onStart }: StartScreenProps) {
             onClick={() => setSelectedDifficulty('all')}
           >
             <span className="difficulty-label">すべて</span>
-            <span className="difficulty-count">30問からランダム</span>
+            <span className="difficulty-count">50問からランダム</span>
           </button>
           <button
             className={`difficulty-option difficulty-easy ${selectedDifficulty === 1 ? 'selected' : ''}`}
             onClick={() => setSelectedDifficulty(1)}
           >
             <span className="difficulty-label">初級</span>
-            <span className="difficulty-count">12問から出題</span>
+            <span className="difficulty-count">20問から出題</span>
           </button>
           <button
             className={`difficulty-option difficulty-medium ${selectedDifficulty === 2 ? 'selected' : ''}`}
             onClick={() => setSelectedDifficulty(2)}
           >
             <span className="difficulty-label">中級</span>
-            <span className="difficulty-count">12問から出題</span>
+            <span className="difficulty-count">20問から出題</span>
           </button>
           <button
             className={`difficulty-option difficulty-hard ${selectedDifficulty === 3 ? 'selected' : ''}`}
             onClick={() => setSelectedDifficulty(3)}
           >
             <span className="difficulty-label">上級</span>
-            <span className="difficulty-count">6問すべて出題</span>
+            <span className="difficulty-count">10問から出題</span>
           </button>
         </div>
       </div>
