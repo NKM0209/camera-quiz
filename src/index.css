@@ -591,6 +591,11 @@ body {
   border-color: #f87171;
 }
 
+.difficulty-expert.selected {
+  background: #a855f7;
+  border-color: #a855f7;
+}
+
 /* ========== Responsive ========== */
 @media (max-width: 480px) {
   .title-main {
