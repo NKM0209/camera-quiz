@@ -8,6 +8,8 @@ export interface Question {
   explanation: string;
 }
 
+export type DifficultyFilter = 'all' | 1 | 2 | 3;
+
 export type GamePhase = 'start' | 'playing' | 'result';
 
 export interface QuizState {
