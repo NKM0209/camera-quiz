@@ -504,20 +504,6 @@
     "explanation": "F値を小さくする（絞りを開く）と被写界深度が浅くなり、背景がよくボケます。"
   },
   {
-    "id": 37,
-    "category": "基礎用語",
-    "difficulty": 2,
-    "question": "「手ブレ補正」の英語表記として正しいものは？",
-    "choices": [
-      "IS（Image Stabilization）",
-      "AF（Auto Focus）",
-      "WB（White Balance）",
-      "DR（Dynamic Range）"
-    ],
-    "answer": 0,
-    "explanation": "手ブレ補正はIS（Image Stabilization）やVR（Vibration Reduction）などと表記されます。"
-  },
-  {
     "id": 38,
     "category": "撮影技法",
     "difficulty": 1,
@@ -628,20 +614,6 @@
     ],
     "answer": 1,
     "explanation": "ファインダーは撮影する構図や被写体を確認するための覗き窓です。"
-  },
-  {
-    "id": 46,
-    "category": "露出",
-    "difficulty": 2,
-    "question": "「露出オーバー」とはどのような状態？",
-    "choices": [
-      "写真が暗すぎる",
-      "写真が明るすぎる",
-      "ピントが合っていない",
-      "色が不自然"
-    ],
-    "answer": 1,
-    "explanation": "露出オーバーは光量が多すぎて写真が明るすぎる（白飛びする）状態です。"
   },
   {
     "id": 47,
