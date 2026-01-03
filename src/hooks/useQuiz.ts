@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { Question, QuizState, GamePhase } from '../types';
+import { Question, QuizState, GamePhase, DifficultyFilter } from '../types';
 import questionsData from '../data/questions.json';
 
 const QUESTIONS_PER_GAME = 10;
@@ -24,10 +24,20 @@ export function useQuiz() {
     answers: [],
   });
 
-  const startGame = useCallback(() => {
-    const shuffled = shuffleArray(questionsData as Question[]);
-    const selected = shuffled.slice(0, QUESTIONS_PER_GAME);
-    
+  const startGame = useCallback((difficulty: DifficultyFilter = 'all') => {
+    // 難易度でフィルタリング
+    const allQuestions = questionsData as Question[];
+    const filtered = difficulty === 'all'
+      ? allQuestions
+      : allQuestions.filter(q => q.difficulty === difficulty);
+
+    // シャッフル
+    const shuffled = shuffleArray(filtered);
+
+    // 出題数を決定（利用可能な問題数と10問の少ない方）
+    const count = Math.min(QUESTIONS_PER_GAME, filtered.length);
+    const selected = shuffled.slice(0, count);
+
     setState({
       phase: 'playing',
       questions: selected,
