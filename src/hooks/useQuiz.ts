@@ -13,16 +13,18 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
+const initialState: QuizState = {
+  phase: 'start',
+  questions: [],
+  currentIndex: 0,
+  score: 0,
+  selectedAnswer: null,
+  showExplanation: false,
+  answers: [],
+};
+
 export function useQuiz() {
-  const [state, setState] = useState<QuizState>({
-    phase: 'start',
-    questions: [],
-    currentIndex: 0,
-    score: 0,
-    selectedAnswer: null,
-    showExplanation: false,
-    answers: [],
-  });
+  const [state, setState] = useState<QuizState>(initialState);
 
   const startGame = useCallback((difficulty: DifficultyFilter = 'all') => {
     // 難易度でフィルタリング
@@ -30,6 +32,11 @@ export function useQuiz() {
     const filtered = difficulty === 'all'
       ? allQuestions
       : allQuestions.filter(q => q.difficulty === difficulty);
+
+    if (filtered.length === 0) {
+      setState(initialState);
+      return;
+    }
 
     // シャッフル
     const shuffled = shuffleArray(filtered);
@@ -84,15 +91,7 @@ export function useQuiz() {
   }, []);
 
   const resetGame = useCallback(() => {
-    setState({
-      phase: 'start',
-      questions: [],
-      currentIndex: 0,
-      score: 0,
-      selectedAnswer: null,
-      showExplanation: false,
-      answers: [],
-    });
+    setState(initialState);
   }, []);
 
   const currentQuestion = state.questions[state.currentIndex] || null;
