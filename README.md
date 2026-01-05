@@ -115,3 +115,17 @@ const filtered = (questionsData as Question[])
 - Vite 5.x
 - React 18.x
 - TypeScript 5.x
+
+## 📚 学習リソース
+
+このプロジェクトは学習教材としても活用できます！
+
+- **[📖 学習ガイド (LEARNING.md)](LEARNING.md)** - 非エンジニア向けのWeb開発入門
+  - レッスン1: Web開発の全体像
+  - レッスン3: CSS - 見た目を美しく
+  - レッスン6: コンポーネントを理解する
+  - その他、全10レッスン
+
+- **[📋 クイックリファレンス (QUICK-REFERENCE.md)](QUICK-REFERENCE.md)** - よく使う知識を素早く参照
+
+プログラミング初心者の方は、まず学習ガイドから始めることをおすすめします！
